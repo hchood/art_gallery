@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Artist do
+describe Customer do
   it { should have_valid(:name).when('David') }
   it { should_not have_valid(:name).when(nil, '')}
 
