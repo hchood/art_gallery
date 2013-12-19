@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Artist do
+  let!(:artist) { FactoryGirl.create(:artist) }
+
   it { should have_valid(:name).when('David') }
   it { should_not have_valid(:name).when(nil, '')}
 
@@ -12,4 +14,6 @@ describe Artist do
   it { should have_valid(:email).when('davew1982@gmail.com', 'helen.c.hood@gmail.com')}
   it { should_not have_valid(:email).when(nil, '', '4535235', 'd@d', 'user@mycom', 'usermy.com', 'user', '.com', 'my.com')}
   it { should validate_uniqueness_of(:email)}
+
+  it { should have_many(:pieces) }
 end
