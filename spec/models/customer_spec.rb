@@ -23,6 +23,7 @@ describe Customer do
       piece1 = FactoryGirl.create(:piece, customer_id: customer.id, price_in_cents: 15000)
       piece2 = FactoryGirl.create(:piece, customer_id: customer.id, price_in_cents: 10000)
       piece3 = FactoryGirl.create(:piece, customer_id: customer.id, price_in_cents:  4000)
+      piece4 = FactoryGirl.create(:piece, customer_id: customer.id + 1, price_in_cents:  4000)
 
       expect(customer.calc_total_spent_in_cents).to eq 29000
     end
