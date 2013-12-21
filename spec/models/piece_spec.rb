@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe Piece do
-  # let(:piece_bought) { FactoryGirl.create(:piece, customer_id)}
-
   it { should validate_presence_of(:artist_id) }
   it { should have_valid(:name).when('Davieee') }
   it { should_not have_valid(:name).when(nil, '')}
