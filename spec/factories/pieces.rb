@@ -9,5 +9,6 @@ FactoryGirl.define do
     available false
     collection_id 1
     customer_id 1
+    artist_id 1
   end
 end
